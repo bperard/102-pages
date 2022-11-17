@@ -30,6 +30,10 @@ nav a {
     font-weight: bold;
 }
 
+#welcome {
+    text-align: center;
+}
+
 #cat-facts-section {
     padding: 1.25em 1.25em;
 }
