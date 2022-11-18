@@ -46,8 +46,29 @@ nav a {
     border-radius: 10%;
 }
 
-#cat-types-section {
+#take-my-kindles {
     clear: both;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+#kindles-pics {
+    display: flex;
+    flex-direction: row;
+}
+
+.kindles {
+    width: 200px;
+    height: 200px;
+    padding-left: 0.75em;
+}
+
+.caged {
+    width: 200px;
+    height: 200px;
+}
+
+#cat-types-section {
     padding-top: 3em;
     display: flex;
     text-align: center;

@@ -12,8 +12,14 @@
 <body>
     <script langage="javascript">
         let myCatFact = "";
-        const userName = prompt("Hello fellow cat-thusiast! What is your name?");
+        let userName = '';
+
+        while (userName === '') {
+            userName = prompt("Hello fellow cat-thusiast! What is your name?");
+        }
+
         const userIsAGoodPerson = confirm("Do you like cats?");
+
         if (userIsAGoodPerson) {
             myCatFact = prompt("Okay, prove it. What is your favorite cat fact?");
         } else {
@@ -40,7 +46,6 @@
             <img id="facts-img" src="https://styles.redditmedia.com/t5_2r5i1/styles/communityIcon_x4lqmqzu1hi81.jpg" />
             <h2>Cat Facts</h2>
             <ul>
-
                 <li>Cats are supposed to have 18 toes</li>
                 <li>Cats can jump six times their body length</li>
                 <li>Cats have 230 bones, while humans only have 206</li>
@@ -54,6 +59,12 @@
                     document.write(`<li>My favorite cat fact is: ${myCatFact}</li>`);
                 </script>
             </ul>
+        </section>
+        <section id="take-my-kindles">
+            <input id="kindles-input" type="number" onchange="kindlesCount()" max="3" min="-1" /> A pack of kittens is a
+            kindle; much better than the Amazon version, but harder to send in the mail. If I
+            offered you three kindles, how many would you take?
+            <div id="kindles-pics"></div>
         </section>
         <section id="cat-types-section">
             <h3>Cat Types</h3>
@@ -87,6 +98,24 @@
             document.querySelector("#welcome").innerHTML = `${userName}, we think you should leave meow.`
         } else {
             document.querySelector("#welcome").innerHTML = `Every day is Caturday here, ${userName}!`;
+        }
+
+        const kindlesPicDiv = document.querySelector("#kindles-pics");
+
+        function kindlesCount() {
+            kindles = document.querySelector("#kindles-input").value;
+            kindlesPicDiv.innerHTML = '';
+            let pics = '';
+
+            if (kindles < 0) {
+                pics += `<img class="caged" alt="adorable cat with Nic Cage eyess" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyemu82yw2e0E2DpRQ52hGnYFKvzosJAJplg&usqp=CAU" />`;
+            } else {
+                for (let i = 0; i < kindles; i++) {
+                    pics += `<img class="kindles" alt="kindle of kittens" src="https://placekitten.com/200/200" />`;
+                }
+            }
+
+            kindlesPicDiv.innerHTML = pics;
         }
     </script>
 </body>
